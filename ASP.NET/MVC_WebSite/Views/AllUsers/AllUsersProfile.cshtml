@@ -1,0 +1,26 @@
+﻿@model MVC_WebSite.Models.AuthData
+
+@{
+    ViewBag.Title = "AllUsersProfile";
+}
+
+
+@{
+    ViewBag.Title = "CreateAccount";
+}
+
+<!-- form init -->
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+<h2>Users Profil </h2>
+
+    foreach (var u in Model.UsersList)
+    {
+        <a href="~/ItemDetails/ModifyItem?id=@u.login">@u.login<br></a>
+    }
+
+}
+

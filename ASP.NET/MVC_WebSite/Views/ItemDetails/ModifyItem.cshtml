@@ -1,0 +1,46 @@
+﻿@model MVC_WebSite.Models.ItemData
+@{
+    ViewBag.Title = "ModifyItem";
+}
+
+<!-- form init -->
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+<h2>Ton objet à modifier : @Model.Name </h2>
+
+    <p>Sa description  : @Model.Description</p>
+
+<!-- Item Name -->
+<p>
+    @Html.LabelFor(model => model.NewName)
+    @Html.EditorFor(model => model.NewName)
+    @Html.ValidationMessageFor(model => model.NewName)
+
+</p>
+
+<!-- Item Description -->
+<p>
+    @Html.LabelFor(model => model.NewDescription)
+    @Html.EditorFor(model => model.NewDescription)
+    @Html.ValidationMessageFor(model => model.NewDescription)
+</p>
+
+
+<!--  Button modify item -->
+<div>
+    <button type="submit" name="modify" value="add">Modidyitem</button>
+</div>
+
+<br />
+
+    <!--  Button suppress item -->
+<div>
+    <button type="submit" name="suppress" value="add">Suppress</button>
+</div>
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

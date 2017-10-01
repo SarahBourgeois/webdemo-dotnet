@@ -1,0 +1,52 @@
+﻿@model MVC_WebSite.Models.ItemData
+@{
+    ViewBag.Title = "CreateForm";
+}
+
+
+<!-- form init -->
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <center><h2>Add new item @Session["userSession"]</h2></center>
+
+    <fieldset>
+        <legend>item</legend>
+
+        <!-- Item Name -->
+        <div>
+            <p>
+                @Html.LabelFor(model => model.Name)
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </p>
+        </div>
+        <!-- Item Description -->
+        <div>
+            <p>
+                @Html.LabelFor(model => model.Description)
+                @Html.EditorFor(model => model.Description)
+                @Html.ValidationMessageFor(model => model.Description)
+            </p>
+        </div>
+        <!-- Submit Button -->
+        <div>
+            <p>
+                <button type="submit" name="action" value="add">Add</button>
+            </p>
+        </div>
+    </fieldset>
+
+
+
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+

@@ -1,0 +1,27 @@
+﻿@model MVC_WebSite.Models.AuthData
+@{
+    ViewBag.Title = "InfoProfile";
+}
+
+<!-- form init -->
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h2>Your profile : </h2>
+
+    <p>Your login : @Session["userSession"]</p>
+    <p>Your password : @Session["pswSession"]</p>
+    <p>Your email : @Session["emailSession"]</p>
+    <br />
+
+
+    <div>
+        <button type="submit" name="disconnect" value="add">Disconnect</button>
+    </div>
+
+    <div>
+        <button type="submit" name="suppProfile" value="add">Suppress profile</button>
+    </div>
+
+}
+

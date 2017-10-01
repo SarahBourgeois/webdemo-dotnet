@@ -1,0 +1,31 @@
+﻿@model MVC_WebSite.Models.ItemData
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h3>Bienvenue @Session["userSession"]</h3>
+
+
+
+@if (Model.ItemList == null) { <p>Aucun objet à afficher</p>}
+
+<fieldset>
+
+    <p>Voici la liste des objets que tu possèdes : </p> <br />
+
+    @foreach (var i in Model.ItemList)
+    {
+        <a href="~/ItemDetails/ModifyItem?id=@i.Id">@i.name<br></a>
+    }
+
+</fieldset>
+
+
+
+
+
+
+
+
+

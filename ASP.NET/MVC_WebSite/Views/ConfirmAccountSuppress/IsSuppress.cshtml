@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "IsSuppress";
+}
+
+<!-- form init -->
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<h3>Your account is now suppress</h3>
+
+ <p>If you want, you can say us why you suppress it</p>
+
+ <textarea>
+
+
+ </textarea>
+
+}
